@@ -1,0 +1,15 @@
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\bin\Debug\PatoTelecom.exe.config
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\bin\Debug\PatoTelecom.exe
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\bin\Debug\PatoTelecom.pdb
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Form1.resources
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Properties.Resources.resources
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.csproj.GenerateResource.cache
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.csproj.CoreCompileInputs.cache
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.exe
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.pdb
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.csproj.CopyComplete
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\bin\Debug\Guna.UI.dll
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Forms.Clientes.resources
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Forms.CadastroClientes.resources
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.csprojAssemblyReference.cache
