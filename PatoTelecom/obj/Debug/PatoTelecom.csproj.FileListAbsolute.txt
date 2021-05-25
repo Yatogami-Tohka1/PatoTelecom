@@ -12,4 +12,7 @@ C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\bin\Debug\Guna.UI.dll
 C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Forms.Clientes.resources
 C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Forms.CadastroClientes.resources
-C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.csprojAssemblyReference.cache
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Forms.CadastroLinhas.resources
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Forms.Linhas.resources
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Forms.Planos.resources
+C:\Users\Matheus\source\repos\PatoTelecom\PatoTelecom\obj\Debug\PatoTelecom.Forms.CadastroPlanos.resources

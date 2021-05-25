@@ -41,6 +41,16 @@ namespace PatoTelecom
             sql.CommandText = $"INSERT INTO Clientes (Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento) VALUES ('{c.Nome}', '{c.Cpf}', '{c.Telefone}', '{c.Cep}', '{c.Estado}', '{c.Cidade}', '{c.Rua}', '{c.Numero}', '{c.Complemento}')";
             Executar(out SqlDataAdapter adapatador);
         }
+        public static void AdicionarOuModificarPlano(Plano p)
+        { 
+            sql.CommandText = $"UPDATE Planos SET NomePlano = '{p.Nome}', Franquia = '{p.Franquia}', CI = '{p.Ci}', Caracteristicas = '{p.Caracteristicas}', Mensalidade = '{p.Mensalidade}' WHERE Id = '{p.Id}'";
+
+            int i = Executar(out SqlDataAdapter adaptador);
+
+            if (i > 0) return;
+            sql.CommandText = $"INSERT INTO Planos (NomePlano, Franquia, CI, Caracteristicas, Mensalidade) VALUES ('{p.Nome}', '{p.Franquia}', '{p.Ci}', '{p.Caracteristicas}', '{p.Mensalidade}')";
+            Executar(out SqlDataAdapter adapatador);
+        }
         //Remover
         public static void RemoverCliente(string cpf)
         {
@@ -51,6 +61,12 @@ namespace PatoTelecom
         public static SqlDataAdapter RetornarClientes()
         {
             sql.CommandText = "SELECT Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento FROM Clientes";
+            Executar(out SqlDataAdapter adaptador);
+            return adaptador;
+        }
+        public static SqlDataAdapter RetornarClientesCaracteristica(string tipo, string arg)
+        {
+            sql.CommandText = $"SELECT Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento FROM Clientes WHERE {tipo} LIKE '%{arg}%'";
             Executar(out SqlDataAdapter adaptador);
             return adaptador;
         }

@@ -38,6 +38,9 @@ namespace PatoTelecom.Forms
 
             if (erro == true) return;
 
+            Cliente c = DataBase.RetornarClienteUnico(TBCPF.Text);
+            if (c != null) { MessageBox.Show("CPF Já cadastrado"); return; }
+                
             DataBase.AdicionarOuModificarCliente(new Cliente(TBNomeCompleto.Text, TBCPF.Text, TBTelefone.Text, TBCEP.Text, TBEstado.Text, TBCidade.Text, TBRua.Text, TBNumeroCasa.Text, TBComplemento.Text));
             Listar();
             Limpar();

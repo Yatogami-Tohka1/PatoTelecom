@@ -50,8 +50,22 @@ namespace PatoTelecom
 
         private void btnCadastrarPlano_Click(object sender, EventArgs e)
         {
-
+            Paginas(new Forms.CadastroPlanos());
         }
 
+        private void btnPlanos_Click(object sender, EventArgs e)
+        {
+            Paginas(new Forms.Planos());
+        }
+
+        private void btnCadastrarLinha_Click(object sender, EventArgs e)
+        {
+            Paginas(new Forms.CadastroLinhas());
+        }
+
+        private void btnLinhas_Click(object sender, EventArgs e)
+        {
+            Paginas(new Forms.Linhas());
+        }
     }
 }

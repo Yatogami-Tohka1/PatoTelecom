@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace PatoTelecom
 {
-    class Gradient : Panel
+    class OverridePanel : Panel
     {
         public Color TopColor { get; set; }
         public Color BottomColor { get; set; }

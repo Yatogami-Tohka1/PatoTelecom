@@ -77,17 +77,44 @@
     <Compile Include="Forms\CadastroClientes.Designer.cs">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CadastroLinhas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroLinhas.Designer.cs">
+      <DependentUpon>CadastroLinhas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroPlanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroPlanos.Designer.cs">
+      <DependentUpon>CadastroPlanos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gradient.cs">
+    <Compile Include="Forms\Linhas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Linhas.Designer.cs">
+      <DependentUpon>Linhas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Planos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Planos.Designer.cs">
+      <DependentUpon>Planos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverridePanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Cliente.cs" />
     <Compile Include="Linha.cs" />
+    <Compile Include="OverrideText.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Plano.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,8 +136,20 @@
     <EmbeddedResource Include="Forms\CadastroClientes.resx">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroLinhas.resx">
+      <DependentUpon>CadastroLinhas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroPlanos.resx">
+      <DependentUpon>CadastroPlanos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Linhas.resx">
+      <DependentUpon>Linhas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Planos.resx">
+      <DependentUpon>Planos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
