@@ -95,6 +95,12 @@
     <Compile Include="Forms\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Consultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultar.Designer.cs">
+      <DependentUpon>Consultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Linhas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,11 @@
     <Compile Include="OverrideText.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PatoTelecomDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatoTelecomDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Plano.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +139,17 @@
     </None>
     <None Include="ConexãoDataBase.xss">
       <DependentUpon>ConexãoDataBase.xsd</DependentUpon>
+    </None>
+    <None Include="PatoTelecomDataSet.xsc">
+      <DependentUpon>PatoTelecomDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PatoTelecomDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PatoTelecomDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PatoTelecomDataSet.xss">
+      <DependentUpon>PatoTelecomDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\download.png" />
     <EmbeddedResource Include="Form1.resx">
@@ -144,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultar.resx">
+      <DependentUpon>Consultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Linhas.resx">
       <DependentUpon>Linhas.cs</DependentUpon>

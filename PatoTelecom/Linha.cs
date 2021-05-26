@@ -9,6 +9,8 @@ namespace PatoTelecom
     class Linha
     {
         private string _id;
+        private string _idCliente;
+        private string _idPlano;
         private Cliente _cliente;
         private Plano _plano;
         private string _numero;
@@ -23,11 +25,15 @@ namespace PatoTelecom
         public string Contratacao { get => _contratacao; set => _contratacao = value; }
         public string Mensalidade { get => _mensalidade; set => _mensalidade = value; }
         public bool Ativa { get => _ativa; set => _ativa = value; }
+        public string IdCliente { get => _idCliente; set => _idCliente = value; }
+        public string IdPlano { get => _idPlano; set => _idPlano = value; }
 
         public Linha(Cliente cliente, Plano plano, string numero, DateTime contratacao, string mensalidade, bool ativa)
         {
             Cliente = cliente;
+            IdCliente = cliente.Id;
             Plano = plano;
+            IdPlano = plano.Id;
             Numero = numero;
             Contratacao = $"{contratacao.Day}/{contratacao.Month}/{contratacao.Year}";
             Mensalidade = mensalidade;

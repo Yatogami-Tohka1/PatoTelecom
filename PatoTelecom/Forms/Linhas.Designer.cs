@@ -30,108 +30,119 @@ namespace PatoTelecom.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ClientesDGV = new System.Windows.Forms.DataGridView();
-            this.conexãoDataBase = new PatoTelecom.ConexãoDataBase();
+            this.LinhasDGV = new System.Windows.Forms.DataGridView();
+            this.patoTelecomDataSet = new PatoTelecom.PatoTelecomDataSet();
             this.linhasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.linhasTableAdapter = new PatoTelecom.ConexãoDataBaseTableAdapters.LinhasTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linhasTableAdapter = new PatoTelecom.PatoTelecomDataSetTableAdapters.LinhasTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planoContratadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPlanoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroLinhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataContratacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mensalidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.OPBusca = new System.Windows.Forms.ComboBox();
+            this.EntradaBusca = new PatoTelecom.OverrideText();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexãoDataBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LinhasDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patoTelecomDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.linhasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            this.panel1.Controls.Add(this.ClientesDGV);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.OPBusca);
+            this.panel1.Controls.Add(this.EntradaBusca);
+            this.panel1.Controls.Add(this.LinhasDGV);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1117, 762);
             this.panel1.TabIndex = 0;
             // 
-            // ClientesDGV
+            // LinhasDGV
             // 
-            this.ClientesDGV.AutoGenerateColumns = false;
-            this.ClientesDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            this.ClientesDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ClientesDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.ClientesDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ClientesDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.ClientesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClientesDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
+            this.LinhasDGV.AutoGenerateColumns = false;
+            this.LinhasDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            this.LinhasDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LinhasDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.LinhasDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LinhasDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.LinhasDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LinhasDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
             this.nomeClienteDataGridViewTextBoxColumn,
+            this.idClienteDataGridViewTextBoxColumn,
             this.planoContratadoDataGridViewTextBoxColumn,
+            this.idPlanoDataGridViewTextBoxColumn,
             this.numeroLinhaDataGridViewTextBoxColumn,
             this.dataContratacaoDataGridViewTextBoxColumn,
             this.mensalidadeDataGridViewTextBoxColumn,
             this.ativaDataGridViewCheckBoxColumn});
-            this.ClientesDGV.DataSource = this.linhasBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClientesDGV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ClientesDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.ClientesDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            this.ClientesDGV.Location = new System.Drawing.Point(-3, 0);
-            this.ClientesDGV.MultiSelect = false;
-            this.ClientesDGV.Name = "ClientesDGV";
-            this.ClientesDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.ClientesDGV.RowHeadersVisible = false;
-            this.ClientesDGV.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.ClientesDGV.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.ClientesDGV.RowTemplate.Height = 24;
-            this.ClientesDGV.Size = new System.Drawing.Size(1120, 770);
-            this.ClientesDGV.TabIndex = 1;
+            this.LinhasDGV.DataSource = this.linhasBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.LinhasDGV.DefaultCellStyle = dataGridViewCellStyle5;
+            this.LinhasDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.LinhasDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            this.LinhasDGV.Location = new System.Drawing.Point(0, 66);
+            this.LinhasDGV.MultiSelect = false;
+            this.LinhasDGV.Name = "LinhasDGV";
+            this.LinhasDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.LinhasDGV.RowHeadersVisible = false;
+            this.LinhasDGV.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.LinhasDGV.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.LinhasDGV.RowTemplate.Height = 24;
+            this.LinhasDGV.Size = new System.Drawing.Size(1120, 693);
+            this.LinhasDGV.TabIndex = 1;
             // 
-            // conexãoDataBase
+            // patoTelecomDataSet
             // 
-            this.conexãoDataBase.DataSetName = "ConexãoDataBase";
-            this.conexãoDataBase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.patoTelecomDataSet.DataSetName = "PatoTelecomDataSet";
+            this.patoTelecomDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // linhasBindingSource
             // 
             this.linhasBindingSource.DataMember = "Linhas";
-            this.linhasBindingSource.DataSource = this.conexãoDataBase;
+            this.linhasBindingSource.DataSource = this.patoTelecomDataSet;
             // 
             // linhasTableAdapter
             // 
             this.linhasTableAdapter.ClearBeforeFill = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // idDataGridViewTextBoxColumn
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 125;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 30;
             // 
             // nomeClienteDataGridViewTextBoxColumn
             // 
@@ -139,7 +150,15 @@ namespace PatoTelecom.Forms
             this.nomeClienteDataGridViewTextBoxColumn.HeaderText = "NomeCliente";
             this.nomeClienteDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeClienteDataGridViewTextBoxColumn.Name = "nomeClienteDataGridViewTextBoxColumn";
-            this.nomeClienteDataGridViewTextBoxColumn.Width = 125;
+            this.nomeClienteDataGridViewTextBoxColumn.Width = 290;
+            // 
+            // idClienteDataGridViewTextBoxColumn
+            // 
+            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente";
+            this.idClienteDataGridViewTextBoxColumn.HeaderText = "idCliente";
+            this.idClienteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            this.idClienteDataGridViewTextBoxColumn.Width = 70;
             // 
             // planoContratadoDataGridViewTextBoxColumn
             // 
@@ -147,7 +166,15 @@ namespace PatoTelecom.Forms
             this.planoContratadoDataGridViewTextBoxColumn.HeaderText = "PlanoContratado";
             this.planoContratadoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.planoContratadoDataGridViewTextBoxColumn.Name = "planoContratadoDataGridViewTextBoxColumn";
-            this.planoContratadoDataGridViewTextBoxColumn.Width = 125;
+            this.planoContratadoDataGridViewTextBoxColumn.Width = 245;
+            // 
+            // idPlanoDataGridViewTextBoxColumn
+            // 
+            this.idPlanoDataGridViewTextBoxColumn.DataPropertyName = "idPlano";
+            this.idPlanoDataGridViewTextBoxColumn.HeaderText = "idPlano";
+            this.idPlanoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idPlanoDataGridViewTextBoxColumn.Name = "idPlanoDataGridViewTextBoxColumn";
+            this.idPlanoDataGridViewTextBoxColumn.Width = 60;
             // 
             // numeroLinhaDataGridViewTextBoxColumn
             // 
@@ -160,7 +187,7 @@ namespace PatoTelecom.Forms
             // dataContratacaoDataGridViewTextBoxColumn
             // 
             this.dataContratacaoDataGridViewTextBoxColumn.DataPropertyName = "DataContratacao";
-            this.dataContratacaoDataGridViewTextBoxColumn.HeaderText = "DataContratacao";
+            this.dataContratacaoDataGridViewTextBoxColumn.HeaderText = "Data";
             this.dataContratacaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dataContratacaoDataGridViewTextBoxColumn.Name = "dataContratacaoDataGridViewTextBoxColumn";
             this.dataContratacaoDataGridViewTextBoxColumn.Width = 125;
@@ -179,7 +206,46 @@ namespace PatoTelecom.Forms
             this.ativaDataGridViewCheckBoxColumn.HeaderText = "Ativa";
             this.ativaDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.ativaDataGridViewCheckBoxColumn.Name = "ativaDataGridViewCheckBoxColumn";
-            this.ativaDataGridViewCheckBoxColumn.Width = 125;
+            this.ativaDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(8, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tipo de Busca";
+            // 
+            // OPBusca
+            // 
+            this.OPBusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            this.OPBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OPBusca.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OPBusca.ForeColor = System.Drawing.Color.White;
+            this.OPBusca.FormattingEnabled = true;
+            this.OPBusca.Items.AddRange(new object[] {
+            "NomeCliente",
+            "PlanoContratado",
+            "NumeroLinha",
+            "Mensalidade"});
+            this.OPBusca.Location = new System.Drawing.Point(12, 22);
+            this.OPBusca.Name = "OPBusca";
+            this.OPBusca.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OPBusca.Size = new System.Drawing.Size(196, 29);
+            this.OPBusca.TabIndex = 6;
+            this.OPBusca.SelectedIndexChanged += new System.EventHandler(this.OPBusca_SelectedIndexChanged);
+            // 
+            // EntradaBusca
+            // 
+            this.EntradaBusca.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EntradaBusca.Location = new System.Drawing.Point(234, 15);
+            this.EntradaBusca.Name = "EntradaBusca";
+            this.EntradaBusca.Size = new System.Drawing.Size(517, 36);
+            this.EntradaBusca.TabIndex = 5;
+            this.EntradaBusca.TextChanged += new System.EventHandler(this.EntradaBusca_TextChanged);
             // 
             // Linhas
             // 
@@ -191,8 +257,9 @@ namespace PatoTelecom.Forms
             this.Text = "Linhas";
             this.Load += new System.EventHandler(this.Linhas_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexãoDataBase)).EndInit();
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LinhasDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patoTelecomDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.linhasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -201,16 +268,21 @@ namespace PatoTelecom.Forms
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView ClientesDGV;
-        private ConexãoDataBase conexãoDataBase;
+        private System.Windows.Forms.DataGridView LinhasDGV;
+        private PatoTelecomDataSet patoTelecomDataSet;
         private System.Windows.Forms.BindingSource linhasBindingSource;
-        private ConexãoDataBaseTableAdapters.LinhasTableAdapter linhasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private PatoTelecomDataSetTableAdapters.LinhasTableAdapter linhasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn planoContratadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPlanoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroLinhaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataContratacaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mensalidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox OPBusca;
+        private OverrideText EntradaBusca;
     }
 }

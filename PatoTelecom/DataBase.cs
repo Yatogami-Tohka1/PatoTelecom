@@ -31,6 +31,16 @@ namespace PatoTelecom
             return i;
         }
         //Adicionar
+        public static void AtivarLinha(int idLinha)
+        {
+            sql.CommandText = $"UPDATE Linhas SET Ativa = '1' WHERE Id = '{idLinha}'";
+            Executar(out SqlDataAdapter adaptador);
+        }
+        public static void DesativarLinha(int idLinha)
+        {
+            sql.CommandText = $"UPDATE Linhas SET Ativa = '0' WHERE Id = '{idLinha}'";
+            Executar(out SqlDataAdapter adaptador);
+        }
         public static void AdicionarOuModificarCliente(Cliente c)
         {
             sql.CommandText = $"UPDATE Clientes SET Nome = '{c.Nome}', CPF = '{c.Cpf}', Telefone = '{c.Telefone}', CEP = '{c.Cep}', Estado = '{c.Estado}', Cidade = '{c.Cidade}', Rua = '{c.Rua}', Numero = '{c.Numero}', Complemento = '{c.Complemento}' WHERE CPF = '{c.Cpf}'";
@@ -53,12 +63,12 @@ namespace PatoTelecom
         }
         public static void AdicionarOuModificarLinha(Linha l)
         {
-            sql.CommandText = $"UPDATE Linhas SET NomeCliente = '{l.Cliente.Nome}', PlanoContratado = '{l.Plano.Nome}', NumeroLinha = '{l.Numero}', DataContratacao = '{l.Contratacao}', Mensalidade = '{l.Mensalidade}', Ativa = '{l.Ativa}' WHERE Id = '{l.Id}'";
+            sql.CommandText = $"UPDATE Linhas SET NomeCliente = '{l.Cliente.Nome}', idCliente = '{l.IdCliente}', PlanoContratado = '{l.Plano.Nome}', idPlano = '{l.IdPlano}',  NumeroLinha = '{l.Numero}', DataContratacao = '{l.Contratacao}', Mensalidade = '{l.Mensalidade}', Ativa = '{l.Ativa}' WHERE Id = '{l.Id}'";
 
             int i = Executar(out SqlDataAdapter adaptador);
 
             if (i > 0) return;
-            sql.CommandText = $"INSERT INTO Linhas (NomeCliente, PlanoContratado, NumeroLinha, DataContratacao, Mensalidade, Ativa) VALUES ('{l.Cliente.Nome}', '{l.Plano.Nome}', '{l.Numero}', '{l.Contratacao}', '{l.Mensalidade}', '{l.Ativa}')";
+            sql.CommandText = $"INSERT INTO Linhas (NomeCliente, idCliente, PlanoContratado, idPlano, NumeroLinha, DataContratacao, Mensalidade, Ativa) VALUES ('{l.Cliente.Nome}', '{l.IdCliente}', '{l.Plano.Nome}', '{l.IdPlano}', '{l.Numero}', '{l.Contratacao}', '{l.Mensalidade}', '{l.Ativa}')";
             Executar(out SqlDataAdapter adapatador);
         }
         //Remover
@@ -73,17 +83,17 @@ namespace PatoTelecom
             Executar(out SqlDataAdapter adaptador);
         }
         //Retornar
-        public static string RetornarId(string Tipo, string Coluna, string Nome)
+        public static int RetornarId(string Table, string Coluna, string Dado)
         {
-            sql.CommandText = $"SELECT Id FROM {Tipo} WHERE {Coluna} = '{Nome}'";
+            sql.CommandText = $"SELECT Id FROM {Table} WHERE {Coluna} = '{Dado}'";
             Executar(out SqlDataAdapter adaptador);
             DataSet ds = new DataSet(); adaptador.Fill(ds, "ID");
             foreach (DataRow Row in ds.Tables["ID"].Rows)
             {
-                string id = Row["Id"].ToString();
+                int id = int.Parse(Row["Id"].ToString());
                 return id;
             }
-            return "";   
+            return 0;   
         }
         public static SqlDataAdapter RetornarClientes()
         {
@@ -93,7 +103,7 @@ namespace PatoTelecom
         }
         public static SqlDataAdapter RetornarLinhas()
         {
-            sql.CommandText = "SELECT ID, NomeCliente, PlanoContratado, NumeroLinha, DataContratacao, Mensalidade, Ativa FROM Linhas";
+            sql.CommandText = "SELECT ID, NomeCliente, idCliente, PlanoContratado, idPlano, NumeroLinha, DataContratacao, Mensalidade, Ativa FROM Linhas";
             Executar(out SqlDataAdapter adaptador);
             return adaptador;
         }
@@ -114,6 +124,30 @@ namespace PatoTelecom
             sql.CommandText = $"SELECT Id, NomePlano, Franquia, CI, Caracteristicas, Mensalidade FROM Planos WHERE {tipo} LIKE '%{arg}%'";
             Executar(out SqlDataAdapter adaptador);
             return adaptador;
+        }
+        public static SqlDataAdapter RetornarLinhaCaracteristica(string tipo, string arg)
+        {
+            sql.CommandText = $"SELECT ID, NomeCliente, idCliente, PlanoContratado, idPlano, NumeroLinha, DataContratacao, Mensalidade, Ativa FROM Linhas WHERE {tipo} LIKE '%{arg}%'";
+            Executar(out SqlDataAdapter adaptador);
+            return adaptador;
+        }
+        public static SqlDataAdapter RetornarLinhasCliente(int idCliente)
+        {
+            sql.CommandText = $"SELECT ID, NomeCliente, idCliente, PlanoContratado, idPlano, NumeroLinha, DataContratacao, Mensalidade, Ativa FROM Linhas WHERE idCliente = '{idCliente}'";
+            Executar(out SqlDataAdapter adaptador);
+            return adaptador;
+        }
+        //Modificar
+        public static void ModificarLinhas(Plano p, int idLinha)
+        {
+            sql.CommandText = $"UPDATE Linhas SET PlanoContratado = '{p.Nome}', idPlano = '{p.Id}', Mensalidade = '{p.Mensalidade}' WHERE Id = '{idLinha}'";
+            Executar(out SqlDataAdapter adaptador);
+        }
+        public static void ModificarClienteNaTableLinhas(int id, string nome, string telefone)
+        {
+            sql.CommandText = $"UPDATE Linhas SET NomeCliente = '{nome}', NumeroLinha = '{telefone}' WHERE idCliente = '{id}'";
+            Executar(out SqlDataAdapter adaptador);
+            
         }
         //RetornarUnico
         public static Cliente RetornarClienteUnico(string cpf)
@@ -155,6 +189,30 @@ namespace PatoTelecom
                 string Caracteristicas = Row["Caracteristicas"].ToString();
                 string Mensalidade = Row["Mensalidade"].ToString();
                 Plano retornar = new Plano(NomePlano, Franquia, Caracteristicas, CI, Mensalidade);
+                retornar.Id = ID;
+                return retornar;
+            }
+            return null;
+        }
+        public static Cliente RetonarClientePorId(int id)
+        {
+            sql.CommandText = $"SELECT Id, Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento FROM Clientes WHERE Id = '{id}'";
+            Executar(out SqlDataAdapter adaptador);
+
+            DataSet ds = new DataSet(); adaptador.Fill(ds, "Cliente");
+            foreach (DataRow Row in ds.Tables["Cliente"].Rows)
+            {
+                string Nome = Row["Nome"].ToString();
+                string CPF = Row["CPF"].ToString();
+                string Telefone = Row["Telefone"].ToString();
+                string CEP = Row["CEP"].ToString();
+                string Estado = Row["Estado"].ToString();
+                string Cidade = Row["Cidade"].ToString();
+                string Rua = Row["Rua"].ToString();
+                string Numero = Row["Numero"].ToString();
+                string Complemento = Row["Complemento"].ToString();
+                string ID = Row["Id"].ToString();
+                Cliente retornar = new Cliente(Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento);
                 retornar.Id = ID;
                 return retornar;
             }

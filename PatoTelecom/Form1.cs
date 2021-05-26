@@ -12,7 +12,6 @@ namespace PatoTelecom
 {
     public partial class Form1 : Form
     {
-        private Panel Esquerda;
         private Form Pagina;
         public Form1()
         {
@@ -66,6 +65,11 @@ namespace PatoTelecom
         private void btnLinhas_Click(object sender, EventArgs e)
         {
             Paginas(new Forms.Linhas());
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Paginas(new Forms.Consultar());
         }
     }
 }
