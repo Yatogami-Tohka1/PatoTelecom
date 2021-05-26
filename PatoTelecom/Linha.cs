@@ -8,5 +8,30 @@ namespace PatoTelecom
 {
     class Linha
     {
+        private string _id;
+        private Cliente _cliente;
+        private Plano _plano;
+        private string _numero;
+        private string _contratacao;
+        private string _mensalidade;
+        private bool _ativa;
+
+        public string Id { get => _id; set => _id = value; }
+        public Cliente Cliente { get => _cliente; set => _cliente = value; }
+        public Plano Plano { get => _plano; set => _plano = value; }
+        public string Numero { get => _numero; set => _numero = value; }
+        public string Contratacao { get => _contratacao; set => _contratacao = value; }
+        public string Mensalidade { get => _mensalidade; set => _mensalidade = value; }
+        public bool Ativa { get => _ativa; set => _ativa = value; }
+
+        public Linha(Cliente cliente, Plano plano, string numero, DateTime contratacao, string mensalidade, bool ativa)
+        {
+            Cliente = cliente;
+            Plano = plano;
+            Numero = numero;
+            Contratacao = $"{contratacao.Day}/{contratacao.Month}/{contratacao.Year}";
+            Mensalidade = mensalidade;
+            Ativa = ativa;
+        }
     }
 }

@@ -51,22 +51,67 @@ namespace PatoTelecom
             sql.CommandText = $"INSERT INTO Planos (NomePlano, Franquia, CI, Caracteristicas, Mensalidade) VALUES ('{p.Nome}', '{p.Franquia}', '{p.Ci}', '{p.Caracteristicas}', '{p.Mensalidade}')";
             Executar(out SqlDataAdapter adapatador);
         }
-        //Remover
-        public static void RemoverCliente(string cpf)
+        public static void AdicionarOuModificarLinha(Linha l)
         {
-            sql.CommandText = $"DELETE FROM Clientes WHERE CPF = '{cpf}'";
+            sql.CommandText = $"UPDATE Linhas SET NomeCliente = '{l.Cliente.Nome}', PlanoContratado = '{l.Plano.Nome}', NumeroLinha = '{l.Numero}', DataContratacao = '{l.Contratacao}', Mensalidade = '{l.Mensalidade}', Ativa = '{l.Ativa}' WHERE Id = '{l.Id}'";
+
+            int i = Executar(out SqlDataAdapter adaptador);
+
+            if (i > 0) return;
+            sql.CommandText = $"INSERT INTO Linhas (NomeCliente, PlanoContratado, NumeroLinha, DataContratacao, Mensalidade, Ativa) VALUES ('{l.Cliente.Nome}', '{l.Plano.Nome}', '{l.Numero}', '{l.Contratacao}', '{l.Mensalidade}', '{l.Ativa}')";
+            Executar(out SqlDataAdapter adapatador);
+        }
+        //Remover
+        public static void RemoverCliente(int id)
+        {
+            sql.CommandText = $"DELETE FROM Clientes WHERE Id = '{id}'";
+            Executar(out SqlDataAdapter adaptador);
+        }
+        public static void RemoverPlano(int id)
+        {
+            sql.CommandText = $"DELETE FROM Planos WHERE Id = '{id}'";
             Executar(out SqlDataAdapter adaptador);
         }
         //Retornar
+        public static string RetornarId(string Tipo, string Coluna, string Nome)
+        {
+            sql.CommandText = $"SELECT Id FROM {Tipo} WHERE {Coluna} = '{Nome}'";
+            Executar(out SqlDataAdapter adaptador);
+            DataSet ds = new DataSet(); adaptador.Fill(ds, "ID");
+            foreach (DataRow Row in ds.Tables["ID"].Rows)
+            {
+                string id = Row["Id"].ToString();
+                return id;
+            }
+            return "";   
+        }
         public static SqlDataAdapter RetornarClientes()
         {
-            sql.CommandText = "SELECT Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento FROM Clientes";
+            sql.CommandText = "SELECT Id, Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento FROM Clientes";
+            Executar(out SqlDataAdapter adaptador);
+            return adaptador;
+        }
+        public static SqlDataAdapter RetornarLinhas()
+        {
+            sql.CommandText = "SELECT ID, NomeCliente, PlanoContratado, NumeroLinha, DataContratacao, Mensalidade, Ativa FROM Linhas";
+            Executar(out SqlDataAdapter adaptador);
+            return adaptador;
+        }
+        public static SqlDataAdapter RetornarPlanos()
+        {
+            sql.CommandText = "SELECT Id, NomePlano, Franquia, CI, Caracteristicas, Mensalidade FROM Planos";
             Executar(out SqlDataAdapter adaptador);
             return adaptador;
         }
         public static SqlDataAdapter RetornarClientesCaracteristica(string tipo, string arg)
         {
-            sql.CommandText = $"SELECT Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento FROM Clientes WHERE {tipo} LIKE '%{arg}%'";
+            sql.CommandText = $"SELECT Id, Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento FROM Clientes WHERE {tipo} LIKE '%{arg}%'";
+            Executar(out SqlDataAdapter adaptador);
+            return adaptador;
+        }
+        public static SqlDataAdapter RetornarPlanoCaracteristica(string tipo, string arg)
+        {
+            sql.CommandText = $"SELECT Id, NomePlano, Franquia, CI, Caracteristicas, Mensalidade FROM Planos WHERE {tipo} LIKE '%{arg}%'";
             Executar(out SqlDataAdapter adaptador);
             return adaptador;
         }
@@ -90,6 +135,26 @@ namespace PatoTelecom
                 string Complemento = Row["Complemento"].ToString();
                 string ID = Row["Id"].ToString();
                 Cliente retornar = new Cliente(Nome, CPF, Telefone, CEP, Estado, Cidade, Rua, Numero, Complemento);
+                retornar.Id = ID;
+                return retornar;
+            }
+            return null;
+        }
+        public static Plano RetornarPlanoUnico(int idPlano)
+        {
+            sql.CommandText = $"SELECT Id, NomePlano, Franquia, CI, Caracteristicas, Mensalidade FROM Planos WHERE Id = '{idPlano}'";
+            Executar(out SqlDataAdapter adaptador);
+
+            DataSet ds = new DataSet(); adaptador.Fill(ds, "Plano");
+            foreach (DataRow Row in ds.Tables["Plano"].Rows)
+            {
+                string ID = Row["Id"].ToString();
+                string NomePlano = Row["NomePlano"].ToString();
+                string Franquia = Row["Franquia"].ToString();
+                string CI = Row["CI"].ToString();
+                string Caracteristicas = Row["Caracteristicas"].ToString();
+                string Mensalidade = Row["Mensalidade"].ToString();
+                Plano retornar = new Plano(NomePlano, Franquia, Caracteristicas, CI, Mensalidade);
                 retornar.Id = ID;
                 return retornar;
             }

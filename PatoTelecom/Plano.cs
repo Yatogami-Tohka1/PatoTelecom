@@ -8,13 +8,13 @@ namespace PatoTelecom
 {
     class Plano
     {
-        private int _id;
+        private string _id;
         private string _nome;
         private string _franquia;
         private string _caracteristicas;
         private string _mensalidade;
         private string _ci;
-        public int Id { get => _id; set => _id = value; }
+        public string Id { get => _id; set => _id = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public string Franquia { get => _franquia; set => _franquia = value; }
         public string Caracteristicas { get => _caracteristicas; set => _caracteristicas = value; }

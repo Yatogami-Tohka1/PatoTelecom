@@ -13,6 +13,7 @@ namespace PatoTelecom.Forms
 {
     public partial class CadastroClientes : Form
     {
+        bool Editando = false;
         public CadastroClientes()
         {
             InitializeComponent();
@@ -39,8 +40,8 @@ namespace PatoTelecom.Forms
             if (erro == true) return;
 
             Cliente c = DataBase.RetornarClienteUnico(TBCPF.Text);
-            if (c != null) { MessageBox.Show("CPF Já cadastrado"); return; }
-                
+            if (c != null && Editando == false) { MessageBox.Show(""); return; }
+
             DataBase.AdicionarOuModificarCliente(new Cliente(TBNomeCompleto.Text, TBCPF.Text, TBTelefone.Text, TBCEP.Text, TBEstado.Text, TBCidade.Text, TBRua.Text, TBNumeroCasa.Text, TBComplemento.Text));
             Listar();
             Limpar();
@@ -69,6 +70,7 @@ namespace PatoTelecom.Forms
         }
         public void Limpar()
         {
+            Editando = false;
             Listar();
             TBNomeCompleto.Text = "";
             TBCPF.Text = "";
@@ -90,10 +92,11 @@ namespace PatoTelecom.Forms
         private void iconButton2_Click(object sender, EventArgs e)
         {
             int LinhaSelecionada = ClientesDGV.SelectedCells[0].RowIndex;
-            string CPFCliente = (string)ClientesDGV.Rows[LinhaSelecionada].Cells[1].Value;
+            string CPFCliente = (string)ClientesDGV.Rows[LinhaSelecionada].Cells[2].Value;
             TBCPF.Enabled = false;
             Cliente c = DataBase.RetornarClienteUnico(CPFCliente);
 
+            Editando = true;
             TBNomeCompleto.Text = c.Nome;
             TBCPF.Text = c.Cpf;
             TBCEP.Text = c.Cep;
@@ -107,9 +110,12 @@ namespace PatoTelecom.Forms
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
+            Editando = false;
             int LinhaSelecionada = ClientesDGV.SelectedCells[0].RowIndex;
-            string CPFCliente = (string)ClientesDGV.Rows[LinhaSelecionada].Cells[1].Value;
-            DataBase.RemoverCliente(CPFCliente);
+            int IdCliente = (int)ClientesDGV.Rows[LinhaSelecionada].Cells[0].Value;
+
+            DataBase.RemoverCliente(IdCliente);
+            Limpar();
             Listar();
         }
     }

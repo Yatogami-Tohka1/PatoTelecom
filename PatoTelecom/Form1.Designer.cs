@@ -34,20 +34,26 @@ namespace PatoTelecom
             FontAwesome.Sharp.IconButton btnPlanos;
             FontAwesome.Sharp.IconButton btnCadastrarLinha;
             FontAwesome.Sharp.IconButton btnLinhas;
+            FontAwesome.Sharp.IconButton iconButton1;
             this.PainelPagina = new System.Windows.Forms.Panel();
             this.gradient1 = new PatoTelecom.OverridePanel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.btnCadastrarCliente = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             btnClientes = new FontAwesome.Sharp.IconButton();
             btnCadastrarPlano = new FontAwesome.Sharp.IconButton();
             btnPlanos = new FontAwesome.Sharp.IconButton();
             btnCadastrarLinha = new FontAwesome.Sharp.IconButton();
             btnLinhas = new FontAwesome.Sharp.IconButton();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             this.PainelPagina.SuspendLayout();
             this.gradient1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClientes
@@ -133,7 +139,7 @@ namespace PatoTelecom
             btnLinhas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnLinhas.Location = new System.Drawing.Point(0, 590);
             btnLinhas.Name = "btnLinhas";
-            btnLinhas.Size = new System.Drawing.Size(265, 63);
+            btnLinhas.Size = new System.Drawing.Size(265, 46);
             btnLinhas.TabIndex = 8;
             btnLinhas.Text = "Linhas               ";
             btnLinhas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -143,7 +149,10 @@ namespace PatoTelecom
             // PainelPagina
             // 
             this.PainelPagina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            this.PainelPagina.Controls.Add(this.iconPictureBox2);
+            this.PainelPagina.Controls.Add(this.label3);
             this.PainelPagina.Controls.Add(this.gradient1);
+            this.PainelPagina.Controls.Add(this.label4);
             this.PainelPagina.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PainelPagina.ForeColor = System.Drawing.Color.Black;
             this.PainelPagina.Location = new System.Drawing.Point(0, 0);
@@ -156,6 +165,7 @@ namespace PatoTelecom
             // 
             this.gradient1.Angle = 0F;
             this.gradient1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.gradient1.Controls.Add(iconButton1);
             this.gradient1.Controls.Add(this.iconPictureBox1);
             this.gradient1.Controls.Add(btnLinhas);
             this.gradient1.Controls.Add(this.btnCadastrarCliente);
@@ -227,6 +237,61 @@ namespace PatoTelecom
             this.label1.TabIndex = 1;
             this.label1.Text = "Pato";
             // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = System.Drawing.Color.Transparent;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            iconButton1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.List;
+            iconButton1.IconColor = System.Drawing.Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new System.Drawing.Point(-2, 642);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new System.Drawing.Size(267, 49);
+            iconButton1.TabIndex = 9;
+            iconButton1.Text = "Consultar          ";
+            iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Satellite;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 200;
+            this.iconPictureBox2.Location = new System.Drawing.Point(689, 285);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(200, 200);
+            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.iconPictureBox2.TabIndex = 10;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(895, 367);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(154, 40);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Telecom";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(895, 327);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 40);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Pato";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,9 +307,11 @@ namespace PatoTelecom
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.PainelPagina.ResumeLayout(false);
+            this.PainelPagina.PerformLayout();
             this.gradient1.ResumeLayout(false);
             this.gradient1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,6 +324,9 @@ namespace PatoTelecom
         private FontAwesome.Sharp.IconButton btnCadastrarCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
