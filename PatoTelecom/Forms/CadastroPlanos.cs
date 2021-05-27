@@ -87,6 +87,10 @@ namespace PatoTelecom.Forms
             TBCaracteristicas.Text = "";
             TBMensalidade.Text = "";
             NUDFranquia.Value = 0;
+            LabelNomePlano.ForeColor = Color.White;
+            LabelCaracteristicasPlano.ForeColor = Color.White;
+            LabelMensalidade.ForeColor = Color.White;
+            LabelFranquia.ForeColor = Color.White;
             bool state = false;
             for (int i = 0; i < ListaCI.Items.Count; i++)
                 ListaCI.SetItemCheckState(i, (state ? CheckState.Checked : CheckState.Unchecked));

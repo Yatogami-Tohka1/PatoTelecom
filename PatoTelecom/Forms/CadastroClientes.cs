@@ -87,6 +87,16 @@ namespace PatoTelecom.Forms
             TBCidade.Text = "";
             TBComplemento.Text = "";
             TBRua.Text = "";
+
+            LabelNomeCompleto.ForeColor = Color.White;
+            LabelCPF.ForeColor = Color.White;
+            LabelCEP.ForeColor = Color.White;
+            LabelTelefone.ForeColor = Color.White;
+            LabelNumeroCasa.ForeColor = Color.White;
+            LabelEstado.ForeColor = Color.White;
+            LabelCidade.ForeColor = Color.White;
+            LabelComplemento.ForeColor = Color.White;
+            LabelRua.ForeColor = Color.White;
             TBCPF.Enabled = true;
         }
 
